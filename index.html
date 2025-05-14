@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>אנטון שמיד - חסיד אומות העולם</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      direction: rtl;
+      background: url('https://cja.huji.ac.il/image.php?id=444927&m=small') center/cover no-repeat;
+      color: #ececec;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.8);
+      min-height: 100vh;
+      padding: 50px 0;
+      overflow-y: auto;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .box {
+      background: rgba(30,30,30,0.9);
+      border-radius: 12px;
+      padding: 30px;
+      width: 70%;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      position: relative;
+      align-self: flex-start; /* default */
+    }
+    /* Alternate side alignment */
+    .container .box:nth-child(2n+1) { align-self: flex-start; }
+    .container .box:nth-child(2n)   { align-self: flex-end; }
+    /* Apply slide on active */
+    .container .box:nth-child(2n+1).active {
+      animation: slideInLeft 0.8s ease-out forwards;
+    }
+    .container .box:nth-child(2n).active {
+      animation: slideInRight 0.8s ease-out forwards;
+    }
+    @keyframes slideInLeft { from { transform: translateX(-200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slideInRight { from { transform: translateX(200px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .box:hover { animation: pulse 1.5s infinite alternate ease-in-out; }
+    @keyframes pulse { to { transform: scale(1.02); } }
+    .img-left, .img-right {
+      width: 45%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.4s ease;
+    }
+    .img-left { float: left; margin: 0 20px 20px 0; }
+    .img-right { float: right; margin: 0 0 20px 20px; }
+    .clearfix::after { content: ""; display: table; clear: both; }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      margin: 20px 0;
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .video-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    a { color: #ffcc66; text-decoration: none; }
+    ul { padding-right: 20px; }
+    li { margin-bottom: 8px; }
+    footer { text-align: center; margin: 40px 0; font-size: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>אנטון שמיד</h1>
+
+      <div class="box clearfix">
+  <h2>קורות חייו</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6a/Anton-Schmid-_low_res.tif/lossy-page1-1200px-Anton-Schmid-_low_res.tif.jpg" alt="תמונת פרונט" class="img-left">
+  <p2>אנטון שמיד נולד בווינה בשנת 1900, למשפחה קתולית פשוטה. בילדותו גילה עניין במכונות ובמערכות חשמל. בגיל צעיר התגייס לצבא ושירת כחשמלאי, תפקיד שבו הפגין מסירות ומקצועיות. לאחר המלחמה הראשונה עבד כמהנדס רכבות, ובכך תרם לשיקום התשתיות באירופה. בשנות השלושים, עם עליית הנאציזם, מצא עצמו מוצב כקצין לוגיסטיקה בעיר וילנה שבפולין. שם, נחשף למצוקות היהודים תחת השלטון הנאצי, ובחר לסייע להם למרות הסיכון לחייו. שמיד נחשב לדמות יוצאת דופן — אדם רגיל בעל אומץ נדיר שהונע מערכים מוסריים עמוקים. החלטותיו באו מהלב, לא מאידיאולוגיה פוליטית, והוא האמין בצדקת דרכו גם כשסביבתו נכנעה לרוע ולפחד. פעולותיו משמשות השראה עד היום ומזכירות את חשיבות החמלה האוניברסלית.</p2>
+</div>
+
+<div class="box clearfix">
+  <h2>סיפור ההצלה</h2>
+  <img src="https://www.ifcj.org/wp-content/uploads/Bundesarchiv_Bild_183-B10160_Wilna_Juden_litauischer_Polizist750x375.jpg" alt="אנטון שמיד בפעולה" class="img-right">
+  <p>במהלך שהותו בוילנה, אנטון שמיד הבחין באכזריות כלפי היהודים. הוא החל לעזור בחשאי, בתחילה באמצעות אספקת מזון ולינה. במהרה, יזם תוכנית מורכבת לזיוף מסמכים שהצילו חיים. הוא שיבץ יהודים ברשימות עובדי רכבת חיוניים ובכך הגן עליהם מפני גירוש ומוות. בנוסף, הבריח יהודים מהגטו למקומות מסתור, תוך שימוש ברכבות משא. שמיד פעל כמעט לבדו, לעיתים מול התנגדות מצד עמיתים. פעולותיו נמשכו חודשים, עד שנחשף. הוא נעצר, נשפט והוצא להורג בידי הגרמנים בשנת 1942. עדותו של שמיד היא סמל לגבורה שקטה — אדם אחד שבחר באנושיות במקום בציות עיוור, וסיכן את הכל למען חייהם של זרים גמורים. פעולותיו משמשות השראה עד היום ומזכירות את חשיבות החמלה האוניברסלית.</p>
+</div>
+
+<div class="box clearfix">
+  <h2>תמונות והנצחה</h2>
+  <img src="https://cja.huji.ac.il/image.php?id=444927&m=small" alt="אנדרטת זיכרון" class="img-left">
+  <p>במקום תחנת הרכבת בוילנה, הוקמה אנדרטה לכבוד אנטון שמיד. הפסל מייצג דמות בודדה העומדת אל מול מסילת ברזל, כסמל להקרבה ולמסע המוסרי שבו בחר. האנדרטה מוקפת לוחות זיכרון ועליהם שמות יהודים שניצלו בזכותו. הטקסים הנערכים שם מדי שנה מושכים ניצולים, בני משפחה ונציגי מדינות שונות. נוסף לכך, מוזיאון "יד ושם" מציג תערוכה קבועה ובה מסמכים, תמונות ועדויות על פועלו. שמו נחקק בקיר הכבוד של חסידי אומות העולם בירושלים. שמיד הוא אחת הדמויות היחידות מגרמניה שקיבלה תואר זה. דמותו הופיעה גם בספרים, סרטים תיעודיים ואפילו בתערוכות אומנות, כאות להשראה ולבחירה מוסרית בעת חשכה. פעולותיו משמשות השראה עד היום ומזכירות את חשיבות החמלה האוניברסלית.</p>
+</div>
+
+<div class="box clearfix">
+  <h2>סרטון תיעודי</h2>
+  <iframe id="video" src="https://www.youtube.com/embed/InblShTSGSE" allowfullscreen></iframe>
+  <p>בסרטון התיעודי של "יד ושם" ניתן לראות קטעי ארכיון נדירים, עדויות מרגשות וניתוחים היסטוריים שמביאים את סיפורו של שמיד לקדמת הבמה. בין הקטעים מופיעים תצלומים של קרונות רכבת, מסמכים מזויפים ששימשו להצלת יהודים, ודימויים חזותיים המעבירים את גודל הסיכון והאומץ שנדרשו. היסטוריונים מדגישים את החשיבות של אדם יחיד שפעל מתוך מוסר אישי ולא מתוך ציות לשלטון. הניצולים מספרים על דמות רגועה, אמפתית ורגישה. הסרטון גם מציג את הדרך שבה התגלתה פעולתו — דרך הלשנה פנימית. למרות גורלו המר, מורשתו של שמיד נותרה חיה, מזכירה לנו את האפשרות לבחור בטוב גם כשהרוע שולט מסביב. פעולותיו משמשות השראה עד היום ומזכירות את חשיבות החמלה האוניברסלית.</p>
+</div>
+
+<div class="box clearfix">
+  <h2>משימה 2</h2>
+  <img src="https://dsvfmvr182ibt.cloudfront.net/prod/uploads/2024/09/5-Allied-and-Axis-countries-in-October-1942-aspect-ratio-1200-723.jpg" alt="מדינות" class="img-left">
+  <p>לפי נתוני יד ושם, פולין מדורגת ראשונה במספר חסידי אומות העולם – יותר מ-7,000. גרמניה עצמה מדורגת הרחק מאחור, עם כמה מאות בלבד. עובדה זו משקפת את התנאים השונים: בפולין התקיימה קהילה יהודית ענפה ונוצרה התנגדות עממית, בעוד שבגרמניה שלט פחד קיומי. מדינות נוספות הבולטות ברשימה כוללות את הולנד, צרפת והונגריה. סיפור יוצא דופן הוא של דנמרק – שם הצליחו תושבים, בתיאום נדיר, להציל כמעט את כל הקהילה היהודית המקומית דרך הברחתם לשוודיה. באסטוניה ומולדובה המספרים נמוכים, כנראה בשל קהילות קטנות או השמדה מהירה. הנתונים מדגישים את חשיבות הבחירה האישית, גם כשמערכות שלמות פועלות בכיוון ההפוך. פעולותיו משמשות השראה עד היום ומזכירות את חשיבות החמלה האוניברסלית.</p>
+  <p>גרמניה הייתה מדינת המקור של המשטר הנאצי, והאוכלוסייה הגרמנית הייתה נתונה לתעמולה אינטנסיבית, חוקים נוקשים, ומעורבות פעילה של רבים ברדיפת היהודים. הסיכון בעבור גרמנים לעזור ליהודים היה גבוה מאוד, וייתכן שגם רמת ההזדהות עם האידיאולוגיה הנאצית הייתה גבוהה יותר מאשר במדינות שנכבשו על ידי גרמניה. בנוסף, עצם העובדה שהשלטון היה גרמני הפחיתה את הצורך ב"מרד אזרחי" כמו במדינות אחרות בהן התושבים עמדו מול שלטון כובש זר.</p>
+  <p>פולין, לעומת זאת, הייתה מוקד מרכזי לקהילות יהודיות רבות לפני השואה, והייתה תחת כיבוש גרמני ישיר. המשמעות היא שהיו בה יותר יהודים שנזקקו לעזרה – וכך גם יותר הזדמנויות לפולנים לסייע. על אף שגם שם הסיכון היה אדיר, יש תיעוד נרחב לפולנים שבחרו לסכן את חייהם ולעזור ליהודים.</p>
+  <p>מדינה שמפתיע למצוא ברשימה היא יפן, שלא הייתה מעורבת ישירות בזירת השואה באירופה. ייתכן ומדובר בצ'יאונה סוגיהארה, דיפלומט יפני שהנפיק ויזות ליהודים. מדינה שממנה ציפינו ליותר חסידים היא צרפת – למרות תנועת ההתנגדות הפעילה שם, ייתכן שהמספר נמוך מהצפוי בשל שיתוף פעולה מצד חלק מהאוכלוסייה עם השלטון הנאצי.</p>
+</div>
+
+      <footer>
+        <h2>מקורות</h2>
+        <ul>
+          <li><a href="https://www.yadvashem.org/he/righteous/stories/schmid.html" target="_blank">יד ושם - Anton Schmid</a></li>
+          <li><a href="https://cja.huji.ac.il/image.php?id=444927&m=small" target="_blank">ארכיון האוניברסיטה העברית - זיכרון שמיד</a></li>
+          <li><a href="https://warfarehistorynetwork.com/article/sergeant-anton-schmid-saint-in-a-feldwebels-uniform/" target="_blank">אתר היסטוריית המלחמות</a></li>
+          <li><a href="https://en.vilna.co.il/history/huo/anton-schmid/" target="_blank">איגוד יוצאי וילנה</a></li>
+        </ul>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const boxes = document.querySelectorAll('.box');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          if (entry.target.querySelector('iframe')) {
+            entry.target.querySelector('iframe').classList.add('video-active');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    boxes.forEach(box => observer.observe(box));
+  </script>
+</body>
+</html>
